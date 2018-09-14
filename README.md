@@ -1,13 +1,22 @@
 # SYNOPSIS
-[![NPM Package](https://img.shields.io/npm/v/ethereumjs-blockchain.svg?style=flat-square)](https://www.npmjs.org/package/ethereumjs-blockchain)
-[![Build Status](https://travis-ci.org/ethereumjs/ethereumjs-blockchain.svg?branch=master)](https://travis-ci.org/ethereumjs/ethereumjs-blockchain)
-[![Coverage Status](https://img.shields.io/coveralls/ethereumjs/ethereumjs-blockchain.svg?style=flat-square)](https://coveralls.io/r/ethereumjs/ethereumjs-blockchain)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ethereum/ethereumjs-lib?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) or #ethereumjs on freenode
+[![CircleCI][circle-image]][circle-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
+[![dependency status][dep-image]][dep-url]
+[![NPM][npm-image]][npm-url]
+
+[circle-image]: https://circleci.com/gh/WanJS/wanchainjs-blockchain.svg?style=svg
+[circle-url]: https://circleci.com/gh/WanJS/wanchainjs-blockchain
+[dep-image]: https://david-dm.org/WanJS/wanchainjs-blockchain.svg
+[dep-url]: https://david-dm.org/WanJS/wanchainjs-blockchain
+[coveralls-image]: https://coveralls.io/repos/github/WanJS/wanchainjs-blockchain/badge.svg?branch=dev
+[coveralls-url]: https://coveralls.io/github/WanJS/wanchainjs-blockchain?branch=dev
+[npm-image]: http://img.shields.io/npm/v/wanchainjs-blockchain.svg
+[npm-url]: https://www.npmjs.org/package/wanchainjs-blockchain
 
 A module to store and interact with blocks.
 
 # INSTALL
-`npm install ethereumjs-blockchain`
+`npm install wanchainjs-blockchain`
 
 # EXAMPLE
 
@@ -17,8 +26,8 @@ installed separately):
 ```javascript
 const levelup = require('levelup')
 const leveldown = require('leveldown')
-const Blockchain = require('ethereumjs-blockchain')
-const utils = require('ethereumjs-util')
+const Blockchain = require('wanchainjs-blockchain')
+const utils = require('wanchainjs-util')
 
 const gethDbPath = './chaindata' // Add your own path here
 const db = levelup(gethDbPath, { db: leveldown })
@@ -51,7 +60,7 @@ new Blockchain({db: db}).iterator('i', (block, reorg, cb) => {
         - [`blockchain.iterator(name, onBlock, [cb])`](#blockchainiteratorname-onblock-cb)        
 
 ## `Blockchain`
-Implements functions for retrieving, manipulating and storing Ethereum's blockchain
+Implements functions for retrieving, manipulating and storing Wanchain's blockchain
 
 ### `new Blockchain(opts)`
 Creates new Blockchain object
@@ -107,7 +116,7 @@ Adds a block to the blockchain.
 #### `blockchain.getBlock(blockTag, cb)`
 Gets a block by its blockTag.
 - `blockTag`  - the block's hash or number
-- `cb` - the callback. It is given two parameters `err` and the found `block` (an instance of https://github.com/ethereumjs/ethereumjs-block) if any.
+- `cb` - the callback. It is given two parameters `err` and the found `block` (an instance of https://github.com/wanchainjs/wanchainjs-block) if any.
 
 --------------------------------------------------------
 

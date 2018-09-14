@@ -1,34 +1,34 @@
 {
-  "name": "ethereumjs-blockchain",
-  "version": "3.2.1",
+  "name": "wanchainjs-blockchain",
+  "version": "3.2.2",
   "description": "A module to store and interact with blocks",
   "main": "index.js",
   "scripts": {
-    "coverage": "nyc npm run test && nyc report --reporter=text-lcov > .nyc_output/lcov.info",
-    "coveralls": "npm run coverage && coveralls <.nyc_output/lcov.info",
+    "test:coverage": "nyc npm run test:unit && npm run test:coveralls-upload",
+    "test:coveralls-upload": "if [ $COVERALLS_REPO_TOKEN ]; then nyc report --reporter=text-lcov | coveralls; fi",
     "lint": "standard",
-    "test": "tape ./test/index.js"
+    "test:unit": "tape ./test/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ethereumjs/ethereumjs-blockchain.git"
+    "url": "git+https://github.com/WanJS/wanchainjs-blockchain.git"
   },
   "keywords": [
-    "ethereum",
+    "wanchain",
     "blockchain"
   ],
-  "author": "mjbecze <mjbecze@gmail.com>",
+  "author": "Tyrion70 <tyrion70@gmail.com>",
   "license": "MPL-2.0",
   "bugs": {
-    "url": "https://github.com/ethereumjs/ethereumjs-blockchain/issues"
+    "url": "https://github.com/WanJS/wanchainjs-blockchain/issues"
   },
-  "homepage": "https://github.com/ethereumjs/ethereumjs-blockchain#readme",
+  "homepage": "https://github.com/WanJS/wanchainjs-blockchain#readme",
   "dependencies": {
     "async": "^2.6.1",
     "ethashjs": "~0.0.7",
-    "ethereumjs-block": "~2.0.1",
-    "ethereumjs-common": "~0.5.0",
-    "ethereumjs-util": "~5.2.0",
+    "wanchainjs-block": "^2.0.2",
+    "wanchainjs-common": "^0.5.2",
+    "wanchainjs-util": "^5.2.1",
     "flow-stoplight": "^1.0.0",
     "levelup": "^1.3.2",
     "lru-cache": "^4.1.3",

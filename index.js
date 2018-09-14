@@ -5,9 +5,9 @@ const Stoplight = require('flow-stoplight')
 const semaphore = require('semaphore')
 const levelup = require('levelup')
 const memdown = require('memdown')
-const Block = require('ethereumjs-block')
-const Common = require('ethereumjs-common')
-const ethUtil = require('ethereumjs-util')
+const Block = require('wanchainjs-block')
+const Common = require('wanchainjs-common')
+const ethUtil = require('wanchainjs-util')
 const Ethash = require('ethashjs')
 const Buffer = require('safe-buffer').Buffer
 const LRU = require('lru-cache')
@@ -481,7 +481,6 @@ Blockchain.prototype._putBlockOrHeader = function (item, cb, isGenesis) {
  */
 Blockchain.prototype.getBlock = function (blockTag, cb) {
   const self = this
-
   // ensure init completed
   self._initLock.await(function runGetBlock () {
     self._getBlock(blockTag, cb)
