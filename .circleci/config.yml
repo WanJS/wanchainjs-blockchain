@@ -78,11 +78,5 @@ jobs:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/.npmrc
       - run:
-          name: "Run docs"
-          command: npm run build:docs
-      - run:
           name: "Publish Release on NPM"
           command: npm publish
-      - store_artifacts:
-          path: dist
-          destination: dist
